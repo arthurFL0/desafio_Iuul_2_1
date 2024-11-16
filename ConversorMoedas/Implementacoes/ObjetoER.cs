@@ -14,5 +14,8 @@ namespace ConversorMoedas.Implementacoes
 
         [JsonPropertyName("conversion_rate")]
         public float Taxa_conversao { get; set; }
+
+        [JsonPropertyName("conversion_result")]
+        public float Valor_Convertido { get; set; }
     }
 }

@@ -7,7 +7,8 @@ namespace ConversorMoedas
         static async Task Main(string[] args)
         {
             ControladorAPI c = new ControladorAPI(new ER_Requester());
-            Console.WriteLine(await c.converterValor("USD", "BRL", 1));
+            ViewConsole vc = new ViewConsole(c);
+            await vc.RodarInterface();
 
         }
     }

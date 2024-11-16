@@ -12,10 +12,10 @@ namespace ConversorMoedas
             requester = r;
         }
 
-        public async Task<float> converterValor(string moeda1, string moeda2, float valor)
+        public async Task<IConversao> converterValorComAPI(PedidoConversao p)
         {
-            IConversao obj = await requester.fazRequisicao(moeda1, moeda2);
-            return obj.Taxa_conversao * valor;
+            IConversao obj = await requester.fazerRequisicao(p);
+            return obj;
         }
     }
 }
