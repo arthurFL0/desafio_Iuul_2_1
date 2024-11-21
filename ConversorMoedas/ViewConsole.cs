@@ -22,8 +22,14 @@ namespace ConversorMoedas
                 {
                     break;
                 }
-                IConversao c = await conversor.converterValor(p);
-                ImprimirInfo(p, c);
+                try
+                {
+                    IConversao c = await conversor.converterValor(p);
+                    ImprimirInfo(p,c);
+                }
+                catch (Exception ex) {
+                    WriteLine(ex.Message);
+                }
             }
 
         }
