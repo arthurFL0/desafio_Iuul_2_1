@@ -3,16 +3,16 @@ using ConversorMoedas.Interfaces;
 
 namespace ConversorMoedas
 {
-    internal class ControladorAPI
+    internal class Conversor
     {
         private Requester requester;
 
-        public ControladorAPI(Requester r)
+        public Conversor(Requester r)
         {
             requester = r;
         }
 
-        public async Task<IConversao> converterValorComAPI(PedidoConversao p)
+        public async Task<IConversao> converterValor(PedidoConversao p)
         {
             IConversao obj = await requester.fazerRequisicao(p);
             return obj;

@@ -4,12 +4,12 @@ namespace ConversorMoedas
 {
     internal class ViewConsole
     {
-        ControladorAPI controlador;
+        Conversor conversor;
 
 
-        public ViewConsole(ControladorAPI c)
+        public ViewConsole(Conversor c)
         {
-            controlador = c;
+            conversor = c;
         }
 
 
@@ -22,7 +22,7 @@ namespace ConversorMoedas
                 {
                     break;
                 }
-                IConversao c = await controlador.converterValorComAPI(p);
+                IConversao c = await conversor.converterValor(p);
                 ImprimirInfo(p, c);
             }
 
